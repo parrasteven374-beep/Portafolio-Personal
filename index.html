@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Michael Parra · Desarrollo de software</title>
+  <meta name="description" content="Portafolio de Michael Parra, estudiante de desarrollo de software en Piedecuesta, Colombia. Proyectos en C# y Python, estudios y tecnologías.">
+  <meta name="theme-color" content="#07070b">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b5cf6'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%2307070b'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='700' font-size='34' text-anchor='middle' fill='url(%23g)'%3EMP%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#inicio" class="nav__logo" aria-label="Ir al inicio">
+      <span class="nav__logo-mark">MP</span>
+      <span class="nav__logo-text">Michael Parra</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#inicio" class="nav__link" data-section="inicio">Inicio</a>
+      <a href="#sobre-mi" class="nav__link" data-section="sobre-mi">Sobre mí</a>
+      <a href="#proyectos" class="nav__link" data-section="proyectos">Proyectos</a>
+      <a href="#estudios" class="nav__link" data-section="estudios">Estudios</a>
+      <a href="#tecnologias" class="nav__link" data-section="tecnologias">Tecnologías</a>
+      <span class="nav__indicator" aria-hidden="true"></span>
+    </nav>
+
+    <a href="#contacto" class="btn btn--small btn--primary nav__cta">Contacto</a>
+
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Menú móvil -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <a href="#inicio" class="menu__link"><small>01</small>Inicio</a>
+    <a href="#sobre-mi" class="menu__link"><small>02</small>Sobre mí</a>
+    <a href="#proyectos" class="menu__link"><small>03</small>Proyectos</a>
+    <a href="#estudios" class="menu__link"><small>04</small>Estudios</a>
+    <a href="#tecnologias" class="menu__link"><small>05</small>Tecnologías</a>
+    <a href="#contacto" class="menu__link"><small>06</small>Contacto</a>
+  </div>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="blob blob--a"></div>
+        <div class="blob blob--b"></div>
+        <div class="hero__grid"></div>
+        <div class="hero__spot" id="heroSpot"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow hero__eyebrow"><span class="dot"></span> Estudiante de desarrollo de software</p>
+
+          <h1 class="hero__title" aria-label="Michael Parra">
+            <span class="hero__line"><span class="hero__word">Michael</span></span>
+            <span class="hero__line"><span class="hero__word hero__word--grad">Parra</span></span>
+          </h1>
+
+          <p class="hero__lead">
+            Aprendo construyendo. Voy probando lenguajes y tecnologías a punta de proyectos, desde APIs en C# hasta herramientas en Python.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#proyectos" class="btn btn--primary magnetic">
+              <span>Ver proyectos</span>
+              <i data-lucide="arrow-down-right"></i>
+            </a>
+            <a href="#contacto" class="btn btn--ghost magnetic">
+              <span>Contacto</span>
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+
+          <p class="hero__loc"><i data-lucide="map-pin"></i> Piedecuesta, Colombia</p>
+        </div>
+
+        <!-- Tarjeta decorativa tipo editor -->
+        <div class="hero__card" aria-hidden="true">
+          <div class="code" data-tilt data-spotlight>
+            <div class="code__bar">
+              <span></span><span></span><span></span>
+              <em>michael.js</em>
+            </div>
+            <pre class="code__body"><code><span class="k">const</span> <span class="v">michael</span> = {
+  <span class="p">ubicacion</span>: <span class="s">"Piedecuesta, Colombia"</span>,
+  <span class="p">estudiando</span>: <span class="s">"Desarrollo de software"</span>,
+  <span class="p">lenguajes</span>: [<span class="s">"C#"</span>, <span class="s">"Python"</span>, <span class="s">"JavaScript"</span>],
+  <span class="p">aprendeHaciendo</span>: <span class="k">true</span>
+};</code></pre>
+          </div>
+          <div class="chip chip--float chip--1">C#</div>
+          <div class="chip chip--float chip--2">Python</div>
+          <div class="chip chip--float chip--3">Angular</div>
+        </div>
+      </div>
+
+      <a href="#sobre-mi" class="scroll-hint" aria-label="Bajar a la siguiente sección">
+        <span>Scroll</span><i></i>
+      </a>
+    </section>
+
+    <!-- ============ SOBRE MÍ ============ -->
+    <section class="section" id="sobre-mi">
+      <div class="container">
+        <header class="section__head" data-aos="fade-up">
+          <p class="eyebrow"><span class="num">01</span> Sobre mí</p>
+          <h2 class="section__title">Un poco de quién <span class="grad">soy</span></h2>
+        </header>
+
+        <div class="about">
+          <div class="about__text" data-aos="fade-up">
+            <p class="about__big">
+              Soy Michael, estudiante de desarrollo de software en Piedecuesta, Colombia.
+            </p>
+            <p>
+              Lo que más me funciona es aprender haciendo: agarro una idea, la convierto en proyecto y en el camino se me quedan los conceptos. Me gusta cambiar de lenguaje y ver cómo se resuelve el mismo problema de otra forma.
+            </p>
+            <p>
+              Hasta ahora he trabajado con C#, Python y tecnologías web, y sigo estudiando para ir sumando más.
+            </p>
+          </div>
+
+          <div class="about__stats">
+            <div class="stat" data-aos="fade-up" data-aos-delay="80" data-spotlight>
+              <strong class="stat__n" data-count="4">0</strong>
+              <span>Proyectos</span>
+            </div>
+            <div class="stat" data-aos="fade-up" data-aos-delay="160" data-spotlight>
+              <strong class="stat__n" data-count="6">0</strong>
+              <span>Lenguajes</span>
+            </div>
+            <div class="stat" data-aos="fade-up" data-aos-delay="240" data-spotlight>
+              <strong class="stat__n" data-count="3">0</strong>
+              <span>Frameworks</span>
+            </div>
+            <div class="stat" data-aos="fade-up" data-aos-delay="320" data-spotlight>
+              <strong class="stat__n" data-count="3">0</strong>
+              <span>Bases de datos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROYECTOS ============ -->
+    <section class="section" id="proyectos">
+      <div class="container">
+        <header class="section__head" data-aos="fade-up">
+          <p class="eyebrow"><span class="num">02</span> Proyectos</p>
+          <h2 class="section__title">Lo que he <span class="grad">construido</span></h2>
+          <p class="section__sub">Cuatro proyectos, todos en GitHub. Dos son full stack, con frontend y backend por separado.</p>
+        </header>
+
+        <div class="projects">
+
+          <article class="project project--fs" data-aos="fade-up" data-tilt data-spotlight>
+            <div class="project__top">
+              <span class="project__num">01</span>
+              <div class="project__tags"><span class="tag tag--fs">Full Stack</span><span class="tag tag--fs">HTML/CSS/JS</span></div>
+            </div>
+            <div class="project__visual" aria-hidden="true">
+              <span>&lt;/&gt;</span>
+              <i></i><i></i><i></i>
+            </div>
+            <h3>Sistema de Gestión de Partidos</h3>
+            <p>Sistema full stack para gestionar partidos: frontend en HTML, CSS y JavaScript conectado a una API backend.</p>
+            <div class="project__links">
+            <a class="project__link" href="https://github.com/parrasteven374-beep/HTML-partidos" target="_blank" rel="noopener noreferrer">
+              <svg class="ico-gh" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"/></svg>
+              Frontend
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+            <a class="project__link" href="https://github.com/parrasteven374-beep/API-partidos-backend" target="_blank" rel="noopener noreferrer">
+              <svg class="ico-gh" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"/></svg>
+              Backend
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+            </div>
+          </article>
+          <article class="project project--ng" data-aos="fade-up" data-aos-delay="100" data-tilt data-spotlight>
+            <div class="project__top">
+              <span class="project__num">02</span>
+              <div class="project__tags"><span class="tag tag--fs">Full Stack</span><span class="tag tag--ng">Angular</span></div>
+            </div>
+            <div class="project__visual" aria-hidden="true">
+              <span>NG</span>
+              <i></i><i></i><i></i>
+            </div>
+            <h3>Proyecto T3</h3>
+            <p>Aplicación full stack con frontend en Angular que consume una API REST.</p>
+            <div class="project__links">
+            <a class="project__link" href="https://github.com/parrasteven374-beep/NG-Frontend-T3" target="_blank" rel="noopener noreferrer">
+              <svg class="ico-gh" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"/></svg>
+              Frontend
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+            <a class="project__link" href="https://github.com/parrasteven374-beep/Api-T3" target="_blank" rel="noopener noreferrer">
+              <svg class="ico-gh" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"/></svg>
+              Backend
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+            </div>
+          </article>
+          <article class="project project--cs" data-aos="fade-up" data-tilt data-spotlight>
+            <div class="project__top">
+              <span class="project__num">03</span>
+              <div class="project__tags"><span class="tag tag--cs">C#</span></div>
+            </div>
+            <div class="project__visual" aria-hidden="true">
+              <span>POO</span>
+              <i></i><i></i><i></i>
+            </div>
+            <h3>POO Gestión Hotelera</h3>
+            <p>Sistema de reservas, consumos y facturación.</p>
+            <div class="project__links">
+            <a class="project__link" href="https://github.com/parrasteven374-beep/POO-Gestion-Hotel" target="_blank" rel="noopener noreferrer">
+              <svg class="ico-gh" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"/></svg>
+              Ver en GitHub
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+            </div>
+          </article>
+          <article class="project project--py" data-aos="fade-up" data-aos-delay="100" data-tilt data-spotlight>
+            <div class="project__top">
+              <span class="project__num">04</span>
+              <div class="project__tags"><span class="tag tag--py">Python</span></div>
+            </div>
+            <div class="project__visual" aria-hidden="true">
+              <span>POS</span>
+              <i></i><i></i><i></i>
+            </div>
+            <h3>Punto de Venta (POS) Cafetería</h3>
+            <p>Punto de venta y control de stock.</p>
+            <div class="project__links">
+            <a class="project__link" href="https://github.com/parrasteven374-beep/PY-Cafeteria" target="_blank" rel="noopener noreferrer">
+              <svg class="ico-gh" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"/></svg>
+              Ver en GitHub
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+            </div>
+          </article>
+        </div>
+
+        <p class="projects__more" data-aos="fade-up">
+          ¿Quieres ver más? Todo está en
+          <a href="https://github.com/parrasteven374-beep" target="_blank" rel="noopener noreferrer">mi GitHub <i data-lucide="arrow-up-right"></i></a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ ESTUDIOS ============ -->
+    <section class="section" id="estudios">
+      <div class="container">
+        <header class="section__head" data-aos="fade-up">
+          <p class="eyebrow"><span class="num">03</span> Estudios</p>
+          <h2 class="section__title">Mi camino <span class="grad">formándome</span></h2>
+        </header>
+
+        <ol class="timeline">
+
+          <li class="edu edu--current" data-aos="fade-up" data-spotlight>
+            <span class="edu__node" aria-hidden="true"></span>
+            <div class="edu__head">
+              <span class="edu__place">UPB Bucaramanga</span>
+              <span class="badge badge--live"><i></i> En curso</span>
+            </div>
+            <h3>Técnico en desarrollo de software</h3>
+          </li>
+
+          <li class="edu" data-aos="fade-up" data-spotlight>
+            <span class="edu__node" aria-hidden="true"></span>
+            <div class="edu__head">
+              <span class="edu__place">SENA</span>
+            </div>
+            <h3>Técnico en programación de aplicaciones para dispositivos móviles</h3>
+            <p>Formación enfocada en desarrollo de aplicaciones móviles. Aquí aprendí HTML, CSS y JavaScript.</p>
+          </li>
+
+          <li class="edu" data-aos="fade-up" data-spotlight>
+            <span class="edu__node" aria-hidden="true"></span>
+            <div class="edu__head">
+              <span class="edu__place">Comfenalco Santander</span>
+            </div>
+            <h3>Introducción a las bases de datos</h3>
+            <p>Conceptos y fundamentos de bases de datos.</p>
+          </li>
+
+          <li class="edu" data-aos="fade-up" data-spotlight>
+            <span class="edu__node" aria-hidden="true"></span>
+            <div class="edu__head">
+              <span class="edu__place">Cursos complementarios</span>
+              <span class="badge">40 h</span>
+            </div>
+            <h3>Edición y creación de contenido para redes sociales</h3>
+            <p>Cursos virtuales de 40 horas.</p>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ TECNOLOGÍAS ============ -->
+    <section class="section" id="tecnologias">
+      <div class="container">
+        <header class="section__head" data-aos="fade-up">
+          <p class="eyebrow"><span class="num">04</span> Tecnologías</p>
+          <h2 class="section__title">Con qué <span class="grad">trabajo</span></h2>
+          <p class="section__sub">Filtra por categoría y pasa el mouse por encima.</p>
+        </header>
+
+        <div class="filters" role="tablist" aria-label="Categorías de tecnologías" data-aos="fade-up">
+          <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">Todo</button>
+          <button class="filter" data-filter="lenguajes" role="tab" aria-selected="false">Lenguajes</button>
+          <button class="filter" data-filter="frameworks" role="tab" aria-selected="false">Frameworks</button>
+          <button class="filter" data-filter="bases" role="tab" aria-selected="false">Bases de datos</button>
+          <button class="filter" data-filter="herramientas" role="tab" aria-selected="false">Herramientas</button>
+        </div>
+
+        <ul class="tech" id="techGrid">
+          <!-- Lenguajes -->
+          <li class="tile" data-cat="lenguajes" data-icon="csharp" data-c="#a179dc"><span class="tile__name">C#</span></li>
+          <li class="tile" data-cat="lenguajes" data-icon="python" data-c="#4b8bbe"><span class="tile__name">Python</span></li>
+          <li class="tile" data-cat="lenguajes" data-icon="javascript" data-c="#f7df1e"><span class="tile__name">JavaScript</span></li>
+          <li class="tile" data-cat="lenguajes" data-icon="typescript" data-c="#3178c6"><span class="tile__name">TypeScript</span></li>
+          <li class="tile" data-cat="lenguajes" data-icon="html5" data-c="#e34f26"><span class="tile__name">HTML5</span></li>
+          <li class="tile" data-cat="lenguajes" data-icon="css3" data-c="#1572b6"><span class="tile__name">CSS</span></li>
+          <!-- Frameworks -->
+          <li class="tile" data-cat="frameworks" data-icon="angular" data-c="#dd0031"><span class="tile__name">Angular</span></li>
+          <li class="tile" data-cat="frameworks" data-icon="bootstrap" data-c="#7952b3"><span class="tile__name">Bootstrap</span></li>
+          <li class="tile" data-cat="frameworks" data-icon="dotnetcore" data-c="#512bd4"><span class="tile__name">.NET Core</span></li>
+          <!-- Bases de datos -->
+          <li class="tile" data-cat="bases" data-icon="microsoftsqlserver" data-c="#cc2927"><span class="tile__name">SQL Server</span></li>
+          <li class="tile" data-cat="bases" data-icon="mysql" data-c="#00758f"><span class="tile__name">MySQL</span></li>
+          <li class="tile" data-cat="bases" data-icon="sqlalchemy" data-c="#d71f00"><span class="tile__name">SQLAlchemy</span></li>
+          <!-- Herramientas -->
+          <li class="tile" data-cat="herramientas" data-icon="git" data-c="#f05032"><span class="tile__name">Git</span></li>
+          <li class="tile" data-cat="herramientas" data-icon="github" data-c="#ffffff" data-invert="true"><span class="tile__name">GitHub</span></li>
+          <li class="tile" data-cat="herramientas" data-icon="vscode" data-c="#007acc"><span class="tile__name">VS Code</span></li>
+          <li class="tile" data-cat="herramientas" data-icon="visualstudio" data-c="#8661c5"><span class="tile__name">Visual Studio</span></li>
+          <li class="tile" data-cat="herramientas" data-icon="apache" data-c="#d22128"><span class="tile__name">Apache</span></li>
+          <li class="tile" data-cat="herramientas" data-icon="figma" data-c="#f24e1e"><span class="tile__name">Figma</span></li>
+          <li class="tile" data-cat="herramientas" data-icon="canva" data-c="#00c4cc"><span class="tile__name">Canva</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="section section--contact" id="contacto">
+      <div class="container">
+        <div class="contact" data-aos="fade-up" data-spotlight>
+          <div class="contact__glow" aria-hidden="true"></div>
+          <p class="eyebrow"><span class="num">05</span> Contacto</p>
+          <h2 class="contact__title">¿Hablamos?</h2>
+          <p class="contact__sub">Si quieres charlar, tienes una idea o simplemente quieres saludar, escríbeme.</p>
+
+          <div class="contact__mail">
+            <a href="mailto:parrasteven374@gmail.com" class="contact__email">parrasteven374@gmail.com</a>
+            <button class="copy" id="copyBtn" type="button" aria-label="Copiar correo">
+              <i data-lucide="copy" class="copy__a"></i>
+              <i data-lucide="check" class="copy__b"></i>
+              <span id="copyText">Copiar</span>
+            </button>
+          </div>
+
+          <div class="contact__links">
+            <a class="btn btn--wa magnetic" href="https://wa.me/573219879580" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+              <span>WhatsApp</span>
+            </a>
+            <a class="btn btn--ghost magnetic" href="https://github.com/parrasteven374-beep" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a class="btn btn--ghost magnetic" href="mailto:parrasteven374@gmail.com">
+              <i data-lucide="mail"></i>
+              <span>Correo</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year">2026</span> Michael Parra · Piedecuesta, Colombia</p>
+      <div class="footer__links">
+        <a href="https://github.com/parrasteven374-beep" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://wa.me/573219879580" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="mailto:parrasteven374@gmail.com">Correo</a>
+      </div>
+      <a href="#inicio" class="footer__top">Volver arriba <i data-lucide="arrow-up"></i></a>
+    </div>
+  </footer>
+
+  <!-- Iconos de marca (Lucide ya no incluye logos de marcas) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35ZM12.05 21.8h-.01a9.9 9.9 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.88 9.88 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 7c0 5.46-4.44 9.9-9.89 9.9ZM20.52 3.45A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.17-1.23-6.16-3.48-8.4Z"/></symbol>
+  </svg>
+
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
