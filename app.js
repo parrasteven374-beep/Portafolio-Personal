@@ -304,6 +304,31 @@ copyBtn.addEventListener("click", async () => {
   setTimeout(() => { copyBtn.classList.remove("is-done"); copyText.textContent = "Copiar"; }, 2000);
 });
 
+/* ---------- Estudios: parallax diagonal (deriva hacia abajo-derecha al hacer scroll) ---------- */
+if (useGsap) {
+  const SPEEDS = [1, 1.35, .8, 1.2];
+  const items = $$(".edu").map((el, i) => ({ el, k: SPEEDS[i % SPEEDS.length], dx: 0, dy: 0, on: false }));
+  const vis = new IntersectionObserver((entries) => {
+    entries.forEach((en) => { const it = items.find((x) => x.el === en.target); if (it) it.on = en.isIntersecting; });
+  }, { rootMargin: "30% 0px" });
+  items.forEach((it) => vis.observe(it.el));
+
+  gsap.ticker.add(() => {
+    const vh = window.innerHeight;
+    const xScale = window.innerWidth <= 640 ? .5 : 1;
+    items.forEach((it) => {
+      if (!it.on) return;
+      const r = it.el.getBoundingClientRect();
+      // -1 arriba del centro, +1 abajo; se resta dy para medir la posición de layout y evitar realimentación
+      const p = Math.max(-1, Math.min(1, (r.top + r.height / 2 - it.dy - vh / 2) / vh));
+      it.dx += (p * 44 * it.k * xScale - it.dx) * .12;
+      it.dy += (p * 26 * it.k - it.dy) * .12;
+      it.el.style.setProperty("--dx", `${it.dx.toFixed(2)}px`);
+      it.el.style.setProperty("--dy", `${it.dy.toFixed(2)}px`);
+    });
+  });
+}
+
 /* ---------- Marquesina de tecnologías ---------- */
 const marqueeRows = $$(".marquee__row");
 if (marqueeRows.length) {

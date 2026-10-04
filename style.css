@@ -330,6 +330,9 @@ body::before {
 
 .edu { padding: 1.5rem 1.6rem; border-radius: var(--radius); border: 1px solid var(--line); background: var(--card); box-shadow: var(--shadow-card); transition: transform .35s var(--ease), border-color .3s, opacity .5s ease-out; }
 .edu:hover { transform: translateX(6px); border-color: var(--line-strong); }
+/* Parallax diagonal: app.js escribe --dx/--dy; el nodo se contra-desplaza para seguir sobre la línea */
+.edu { translate: var(--dx, 0px) var(--dy, 0px); will-change: translate; }
+.edu .edu__node { translate: calc(var(--dx, 0px) * -1) calc(var(--dy, 0px) * -1); }
 .edu > *:not(.edu__node) { position: relative; z-index: 1; }
 .edu__node { position: absolute; left: -38px; top: 1.9rem; width: 15px; height: 15px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); transition: background .3s, box-shadow .3s; }
 .edu:hover .edu__node { background: var(--accent); box-shadow: 0 0 0 5px rgba(var(--accent-rgb), .18); }

@@ -10,6 +10,9 @@ Sitio estático hecho con HTML, CSS y JavaScript
 index.html   Contenido y estructura
 style.css    Estilos (CSS propio)
 app.js       Interacciones y animaciones
+assets/      CV en PDF e imagen para compartir (og-image.png)
+robots.txt   Reglas para buscadores
+sitemap.xml  Mapa del sitio
 ```
 
 ## Librerías (por CDN)
