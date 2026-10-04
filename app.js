@@ -206,6 +206,18 @@ tiles.forEach((tile) => {
   }
 });
 
+/* Proyectos: logos de lenguajes (mismos iconos de Devicon) */
+$$(".project [data-icon]").forEach((el) => {
+  const name = el.dataset.icon;
+  const img = new Image();
+  img.alt = "";
+  img.loading = "lazy";
+  img.src = `${ICON_URL}/${name}/${name}-original.svg`;
+  // Si el icono no carga, se muestra el nombre en texto
+  img.onerror = () => img.replaceWith(document.createTextNode(el.getAttribute("title") || name));
+  el.append(img);
+});
+
 /* Entrada en cascada al llegar a la grilla */
 if (useGsap) {
   gsap.set(tiles, { opacity: 0, y: 40, scale: .92, rotationX: -25 });
@@ -271,19 +283,30 @@ filters.forEach((btn) => {
     if (useGsap && window.Flip) {
       tilesReady = false;
       gsap.killTweensOf(tiles);
+      gsap.killTweensOf(grid);
       gsap.set(tiles, { opacity: 1, x: 0, y: 0, scale: 1, rotationX: 0, rotationY: 0 });
+      // Con absolute:true las tarjetas salen del flujo y la grilla colapsaría:
+      // se fija su altura y se anima hasta la final para que lo de abajo no se monte encima
+      const h0 = grid.offsetHeight;
+      grid.style.height = h0 + "px";
+      grid.style.overflow = "hidden";
       const state = Flip.getState(tiles);
       apply();
+      grid.style.height = "auto";
+      const h1 = grid.offsetHeight;
+      grid.style.height = h0 + "px";
+      gsap.to(grid, { height: h1, duration: .5, ease: "power3.inOut" });
       Flip.from(state, {
         duration: .5, ease: "power3.inOut", absolute: true, scale: true, stagger: .02,
         onEnter: (els) => gsap.fromTo(els, { opacity: 0, scale: .7 }, { opacity: 1, scale: 1, duration: .4, ease: "power3.out", delay: .12 }),
         onLeave: (els) => gsap.to(els, { opacity: 0, scale: .7, duration: .25, ease: "power3.in" }),
-        onComplete: () => (tilesReady = true),
+        // La altura se libera solo cuando las tarjetas vuelven al flujo (si no, la grilla colapsa un instante)
+        onComplete: () => { tilesReady = true; grid.style.height = ""; grid.style.overflow = ""; if (window.AOS) AOS.refresh(); },
       });
     } else {
       apply();
+      if (window.AOS) AOS.refresh();
     }
-    if (window.AOS) setTimeout(AOS.refresh, 900);
   });
 });
 

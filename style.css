@@ -288,6 +288,8 @@ body::before {
 .project__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem; }
 .project__num { font-family: var(--font-mono); font-size: .8rem; color: var(--dim); }
 .tag { padding: .3rem .8rem; border-radius: 999px; font-family: var(--font-mono); font-size: .75rem; border: 1px solid rgba(var(--pc), .4); color: rgb(var(--pc)); background: rgba(var(--pc), .08); }
+.tag--ico { display: inline-flex; align-items: center; padding: .35rem .5rem; }
+.tag--ico img { width: 18px; height: 18px; display: block; }
 .project__tags { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .4rem; }
 .project__links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: auto; }
 .project__links .project__link { margin-top: 0; }
@@ -298,6 +300,10 @@ body::before {
   background: radial-gradient(circle at 30% 20%, rgba(var(--pc), .18), transparent 60%), rgba(26, 26, 26, .025);
   border: 1px solid var(--line);
 }
+.project__logos { display: flex; align-items: center; gap: 18px; }
+.project__logos em { display: block; }
+.project__logos img { width: 54px; height: 54px; display: block; }
+.project__logos:has(em:nth-child(2)) img { width: 46px; height: 46px; }
 .project__visual span { font-family: var(--font-mono); font-size: 2.6rem; font-weight: 500; color: rgb(var(--pc)); transition: transform .4s var(--ease); }
 .project:hover .project__visual span { transform: scale(1.15); }
 .project__visual i { position: absolute; border-radius: 50%; border: 1px solid rgba(var(--pc), .3); transition: transform .5s var(--ease), opacity .3s; }
